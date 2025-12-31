@@ -1,13 +1,13 @@
 var plexify = function () {
     function n() {
         var e = window.location.search;
-        let l = new URLSearchParams(e).get("data-theme");
+        let l = new URLSearchParams(e).get("light-theme");
         var t,
             e = document.querySelector(".dark-theme"),
             n = document.querySelector(".light-theme");
         let a = document.querySelector("html");
         function o(e, t) {
-            var n = a.classList.contains("dark") ? "dark" : "light";
+            var n = a.classList.contains("light") ? "dark" : "light";
             if (t) {
                 if (e === n) return;
             } else if (l) e = l;
@@ -26,11 +26,11 @@ var plexify = function () {
                 : "dark" == l && o("dark")
             : ((t = "theme"),
               o(
-                  "dark" === (t = (t = document.cookie.match(new RegExp("(^| )" + t + "=([^;]+)"))) ? t[2] : null) ||
-                      "light" === t
-                      ? t
-                      : "dark"
-              )),
+    "dark" === (t = (t = document.cookie.match(new RegExp("(^| )" + t + "=([^;]+)"))) ? t[2] : null) ||
+        "light" === t
+        ? t
+        : "light"
+)),
             e && e.addEventListener("click", () => o("light", "btn")),
             n && n.addEventListener("click", () => o("dark", "btn"));
     }
